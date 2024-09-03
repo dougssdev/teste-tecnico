@@ -1,11 +1,11 @@
 import json
 
 #carregamento de dados
-with open('faturamento.json', 'r') as file:
+with open('dados.json', 'r') as file:
     dados = json.load(file)
 
 #extraindo valores e filtrando dias acima de 0 reais de faturamento
-faturamentoDiario = [dia["valor"] for dia in dados["faturamento diario"] if dia["valor"] > 0]
+faturamentoDiario = [dia["valor"] for dia in dados if dia["valor"] > 0]
 
 
 menorFaturamento = min(faturamentoDiario)
